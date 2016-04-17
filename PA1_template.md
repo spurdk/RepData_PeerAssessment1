@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 Coursera course: Reproducible Research (Student: SpurDK)
 
 It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a [Fitbit](www.fitbit.com) or [Microsoft Band](https://www.microsoft.com/microsoft-band/en-us). These type of devices are part of the “quantified self” movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.
@@ -50,7 +55,7 @@ stepsPerDay <- activityData %>%
 hist(stepsPerDay$total, xlab="Number of steps", main="Historgram of total number os steps taken per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 Based on a total of 61 days a nicely formed normal distrubtion of steps taken each days shows up - telling us that most days has a total number of steps taken between 10,000 and 15,000. To get further information, we can calculate the mean and median:
 
@@ -86,7 +91,7 @@ plot(stepsAllDays, type="l", ylab="Average steps taken")
 title("Average daily activity pattern")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 On the line chart above it is clear to see, that the activity peak is in the morning. To identify the excact time we use the code below: 
 
@@ -136,7 +141,7 @@ stepsPerDay <- activityDataCleaned %>%
 hist(stepsPerDay$total, xlab="Number of steps", main="Historgram of total number os steps taken per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
 ```r
 round(mean(stepsPerDay$total, na.rm = TRUE), 0)
@@ -180,7 +185,7 @@ plot(stepsWeekend, type="l",  xlab="Interval", ylab="Steps taken", ylim=c(0, 250
 title("Average steps taken per hour in weekend")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 This indicates a clear difference in activity patterns between weekdays and weekends. Weekends starts off later around 8 am and the activity level through out the days is more equal distributed than in weekdays. The peak in the morning (8.35 am) isn't present in the weekend either. The days end almost at the same time around 10 pm.
 
